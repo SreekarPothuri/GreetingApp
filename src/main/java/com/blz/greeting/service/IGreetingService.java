@@ -13,4 +13,6 @@ public interface IGreetingService {
 	Optional<Greeting> getGreetingById(long id);
 
 	List<Greeting> getAllGreetings();
+	
+	Optional<Greeting> editGreetingById(long id, String name);
 }
