@@ -1,28 +1,35 @@
 package com.blz.greeting.model;
 
-public class Greeting {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "greet")
+public class Greeting {
+	@Id
 	private long id;
-	private String greeting;
-	
-	public Greeting(long id, String greeting) {
-		super();
-		this.id = id;
-		this.greeting = greeting;
+	private String message;
+
+	public Greeting() {
+		id = 0;
+		message = "";
 	}
-	
-	
+
+	public Greeting(long id, String message) {
+		this.id = id;
+		this.message = message;
+	}
+
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+	public String getMessage() {
+		return message;
 	}
-	public String getGreeting() {
-		return greeting;
-	}
-	public void setGreeting(String greeting) {
-		this.greeting = greeting;
+
+	public void setMessage(String name) {
+		this.message = name;
 	}
 }
-
