@@ -1,5 +1,6 @@
 package com.blz.greeting.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.blz.greeting.model.Greeting;
@@ -11,4 +12,5 @@ public interface IGreetingService {
 
 	Optional<Greeting> getGreetingById(long id);
 
+	List<Greeting> getAllGreetings();
 }

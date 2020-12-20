@@ -1,5 +1,6 @@
 package com.blz.greeting.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class GreetingController {
 	public Optional<Greeting> getGreetingById(@PathVariable(value = "id") long id) {
 		return iGreetingService.getGreetingById(id);
 	}
+	
+	@GetMapping("/getAllGreetings")
+    public List<Greeting> getAllGreeting() {
+        return iGreetingService.getAllGreetings();
+    }
 
 	@PostMapping("/post")
 	public Greeting getGreeting(@RequestParam(value = "name", defaultValue = "World") String name) {
